@@ -20,7 +20,7 @@
 (add-to-list 'load-path "~/elisp/tabbar")
 (add-to-list 'load-path "~/elisp/popwin-el")
 (add-to-list 'load-path "~/elisp/yasnippet")
-(add-to-list 'load-path "~/elisp/flymake")
+(add-to-list 'load-path "~/elisp/emacs-flymake")
 (add-to-list 'load-path "~/elisp/slime")
 (setq inferior-lisp-program "/usr/local/bin/sbcl")
 (add-to-list 'load-path "~/elisp/emacs-google-this")
