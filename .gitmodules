@@ -46,3 +46,18 @@
 [submodule "know-your-http-well"]
 	path = know-your-http-well
 	url = git@github.com:for-GET/know-your-http-well
+[submodule "emacs-flymake"]
+	path = emacs-flymake
+	url = git://github.com/illusori/emacs-flymake.git
+[submodule "popup-el"]
+	path = popup-el
+	url = git://github.com/auto-complete/popup-el.git
+[submodule "rinari"]
+	path = rinari
+	url = git://github.com/eschulte/rinari.git
+[submodule "yasnippet"]
+	path = yasnippet
+	url = git://github.com/capitaomorte/yasnippet.git
+[submodule "emacs-rails"]
+	path = emacs-rails
+	url = git://github.com/remvee/emacs-rails.git
