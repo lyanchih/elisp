@@ -55,10 +55,28 @@
 (require 'rails-ext)
 (require 'coffee-mode)
 (require 'cl-lib)
-;(require 'valgrind)
+;; (require 'valgrind)
+(require 'dired-single)
+;; ***** Dired *****
+(add-hook 'dired-load-hook
+          '(lambda ()
+             (define-key dired-mode-map [return] 'dired-single-buffer)
+             (define-key dired-mode-map [mouse-1] 'dired-single-buffer-mouse)
+             (define-key dired-mode-map "^"
+               (function
+                (lambda nil (interactive) (dired-single-buffer ".."))))
+             (define-key dired-mode-map "f" 'dired-single-buffer)
+             (define-key dired-mode-map "b" "^")
+             (global-set-key "\C-xd"
+                             (lambda ()
+                               (interactive)
+                               (dired-single-magic-buffer
+                                (if (buffer-file-name)
+                                    (file-name-directory buffer-file-name)
+                                  nil))))
+             (global-set-key "\C-x4d" 'dired-single-magic-buffer)))
 (require 'magit)
 (require 'maxframe)
-(require 'dired-single)
 (require 'jump)
 (require 'rinari)
 (require 'auto-indent-mode)
@@ -237,24 +255,7 @@
              ))
 (put 'dired-find-alternate-file 'disabled nil)
 
-;; ***** Dired *****
-(add-hook 'dired-load-hook
-          '(lambda ()
-             (define-key dired-mode-map [return] 'dired-single-buffer)
-             (define-key dired-mode-map [mouse-1] 'dired-single-buffer-mouse)
-             (define-key dired-mode-map "^"
-               (function
-                (lambda nil (interactive) (dired-single-buffer ".."))))
-             (define-key dired-mode-map "f" 'dired-single-buffer)
-             (define-key dired-mode-map "b" "^")
-             (global-set-key "\C-xd"
-                             (lambda ()
-                               (interactive)
-                               (dired-single-magic-buffer
-                                (if (buffer-file-name)
-                                    (file-name-directory buffer-file-name)
-                                  nil))))
-             (global-set-key "\C-x4d" 'dired-single-magic-buffer)))
+
 
 ;; ***** Indent *****
 (auto-indent-global-mode)
