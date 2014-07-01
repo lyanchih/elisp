@@ -76,3 +76,6 @@
 [submodule "json-reformat"]
 	path = json-reformat
 	url = git@github.com:gongo/json-reformat
+[submodule "swift-mode"]
+	path = swift-mode
+	url = git@github.com:chrisbarrett/swift-mode
