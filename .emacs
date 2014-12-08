@@ -1,7 +1,6 @@
 ;; Emacs Lisp Package Path List
 ;;************************************************************
 (add-to-list 'load-path "~/elisp")
-(add-to-list 'load-path "~/.emacs.d/")
 (add-to-list 'load-path "~/elisp/popup-el")
 (add-to-list 'load-path "~/elisp/auto-complete")
 (add-to-list 'load-path "~/elisp/emacs-rails")
@@ -11,9 +10,9 @@
 (add-to-list 'load-path "~/elisp/magit")
 (add-to-list 'exec-path "/Users/lyanchih/.rvm/bin")
 (add-to-list 'exec-path "/usr/local/bin")
-(add-to-list 'load-path "~/elisp/jump")
+(add-to-list 'load-path "~/elisp/jump.el")
 (add-to-list 'load-path "~/elisp/rinari")
-(add-to-list 'load-path "~/elisp/auto-indent-mode")
+(add-to-list 'load-path "~/elisp/auto-indent-mode.el")
 (add-to-list 'load-path "~/elisp/autopair")
 (add-to-list 'load-path "~/elisp/rhtml")
 (add-to-list 'load-path "~/elisp/google-maps")
@@ -83,7 +82,7 @@
 (require 'auto-indent-mode)
 (require 'autopair)
 (require 'sr-speedbar)
-(require 'google-maps)
+;;(require 'google-maps)
 (require 'switch-window)
 (require 'tabbar)
 (require 'popwin)
@@ -189,7 +188,7 @@
       '((left . 0) (top . 0) (fullscreen . fullboth) (internal-border-width . 0) (left-fringe . 5)
         (right-fringe . 5) (alpha . 90) (tool-bar-lines . nil) (foreground-color . "OliveDrab")
         (background-color . "black")))
-(modify-frame-parameters (selected-frame) 'frame-parameter-options)
+(modify-frame-parameters (selected-frame) frame-parameter-options)
 (setq default-frame-alist (append frame-parameter-options '((font . "DejaVu-20"))))
 
 ;; Auto Open

@@ -79,3 +79,21 @@
 [submodule "swift-mode"]
 	path = swift-mode
 	url = git@github.com:chrisbarrett/swift-mode
+[submodule "rhtml"]
+	path = rhtml
+	url = git@github.com:eschulte/rhtml
+[submodule "auto-complete-clang"]
+	path = auto-complete-clang
+	url = git@github.com:brianjcj/auto-complete-clang.git
+[submodule "jump.el"]
+	path = jump.el
+	url = https://github.com/eschulte/jump.el
+[submodule "auto-indent-mode.el"]
+	path = auto-indent-mode.el
+	url = git@github.com:mlf176f2/auto-indent-mode.el
+[submodule "autopair"]
+	path = autopair
+	url = https://github.com/capitaomorte/autopair
+[submodule "tabbar"]
+	path = tabbar
+	url = https://github.com/dholm/tabbar
