@@ -97,3 +97,6 @@
 [submodule "tabbar"]
 	path = tabbar
 	url = https://github.com/dholm/tabbar
+[submodule "wsd-mode"]
+	path = wsd-mode
+	url = git@github.com:josteink/wsd-mode

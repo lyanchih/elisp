@@ -41,6 +41,7 @@
 (add-to-list 'load-path "~/elisp/duckduckgo")
 (add-to-list 'load-path "~/elisp/know-your-http-well/emacs")
 (add-to-list 'load-path "~/elisp/swift-mode")
+(add-to-list 'load-path "~/elisp/wsd-mode")
 
 ;; Emacs Lisp Package Require
 ;;************************************************************
@@ -113,6 +114,7 @@
 (require 'ddg-mode)
 (require 'know-your-http-well)
 (require 'swift-mode)
+(require 'wsd-mode)
 
 ;; Normal Development Enviroment Setting
 ;;************************************************************
