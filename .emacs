@@ -42,6 +42,7 @@
 (add-to-list 'load-path "~/elisp/know-your-http-well/emacs")
 (add-to-list 'load-path "~/elisp/swift-mode")
 (add-to-list 'load-path "~/elisp/wsd-mode")
+(add-to-list 'load-path "~/elisp/jsx-mode.el/src")
 
 ;; Emacs Lisp Package Require
 ;;************************************************************
@@ -115,6 +116,7 @@
 (require 'know-your-http-well)
 (require 'swift-mode)
 (require 'wsd-mode)
+(require 'jsx-mode)
 
 ;; Normal Development Enviroment Setting
 ;;************************************************************
@@ -499,3 +501,19 @@ by using nxml's indentation rules."
   ""
   (interactive)
   (setq tab-stop-list '(4 8 12 16 20 24 28 32 36 40 44 48 52 56 60)))
+
+;; ***** jsx *****
+(add-to-list 'auto-mode-alist '("\\.jsx\\'" . jsx-mode))
+(autoload 'jsx-mode "jsx-mode" "JSX mode" t)
+(custom-set-variables
+ '(jsx-indent-level 2)
+ '(jsx-cmd-options nil)
+ '(jsx-use-flymake nil)
+ '(jsx-syntax-check-mode "compile"))
+
+(defun jsx-mode-init ()
+  (define-key jsx-mode-map (kbd "C-c d") 'jsx-display-popup-err-for-current-line)
+  (when (require 'auto-complete nil t)
+    (auto-complete-mode t)))
+
+(add-hook 'jsx-mode-hook 'jsx-mode-init)

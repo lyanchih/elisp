@@ -100,3 +100,6 @@
 [submodule "wsd-mode"]
 	path = wsd-mode
 	url = git@github.com:josteink/wsd-mode
+[submodule "jsx-mode.el"]
+	path = jsx-mode.el
+	url = git@github.com:jsx/jsx-mode.el
