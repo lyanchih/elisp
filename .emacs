@@ -504,7 +504,7 @@ by using nxml's indentation rules."
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . jsx-mode))
 (autoload 'jsx-mode "jsx-mode" "JSX mode" t)
 (custom-set-variables
- '(jsx-indent-level 2)
+ '(jsx-indent-level 4)
  '(jsx-cmd-options nil)
  '(jsx-use-flymake nil)
  '(jsx-syntax-check-mode "compile"))
@@ -515,3 +515,11 @@ by using nxml's indentation rules."
     (auto-complete-mode t)))
 
 (add-hook 'jsx-mode-hook 'jsx-mode-init)
+
+;; ***** google dictionary *****
+(defun gsh()
+  (interactive)
+  (let
+      ((word-idiom
+        (read-string "Word / Idiom : " nil 'minibuffer-history "word" nil)))
+    (browse-url (format (google-url) (concat word-idiom " definition")))))
