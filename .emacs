@@ -42,6 +42,7 @@
 (add-to-list 'load-path "~/elisp/swift-mode")
 (add-to-list 'load-path "~/elisp/wsd-mode")
 (add-to-list 'load-path "~/elisp/jsx-mode.el/src")
+(add-to-list 'load-path "~/elisp/less-css-mode")
 
 ;; Emacs Lisp Package Require
 ;;************************************************************
@@ -115,6 +116,7 @@
 (require 'swift-mode)
 (require 'wsd-mode)
 (require 'jsx-mode)
+(require 'less-css-mode)
 
 ;; Normal Development Enviroment Setting
 ;;************************************************************
@@ -398,21 +400,24 @@
 (defun tsh()
   (interactive)
   (let ((host-name
-         (read-string "Host name(pi):" nil 'minibuffer-history "pi" nil))
-        (domain-name
+         (read-string "Host name:" nil 'minibuffer-history "" nil))
+        (domain
          (read-string "Domain:" nil 'minibuffer-history "" nil))
         (port
          (read-string "Port(22):" nil nil "22" nil))
         (is-sudo
-         (read-string "Sudo(y or n)?:" nil nil "n" nil)))
-    (if (or (eq pi "") (eq domain-name ""))
-        ()
-      (let ((ssh-result
-             (concat "/ssh:" host-name "@" domain-name "#" port ":" "~/")))
-        (if (eq is-sudo "y")
-            ())
-        (dired ssh-result)
-        (multi-shell-new)))))
+         (read-string "Sudo(y or n)?:" nil nil "n" nil))
+        (ssh-result "/ssh"))
+    (set 'ssh-result (concat "/ssh:" host-name "@" domain))
+    (if (and (eq host-name "") (eq domain ""))
+        (message "You should enter host name or domain")
+      (if (or (eq host-name "") (eq domain ""))
+          (set 'ssh-result (concat "/ssh:" (if (eq host-name "") domain host-name))))
+      (set 'ssh-result (concat ssh-result "#" port))
+      (if (eq is-sudo "y") (set 'ssh-result (concat ssh-result "|sudo:")))
+      (set 'ssh-result (concat ssh-result ":~/"))
+      (dired ssh-result)
+      (multi-shell-new))))
 
 ;; ***** multi-shell *****
 (setq multi-shell-command "/bin/bash")

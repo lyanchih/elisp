@@ -103,3 +103,6 @@
 [submodule "jsx-mode.el"]
 	path = jsx-mode.el
 	url = git@github.com:jsx/jsx-mode.el
+[submodule "less-css-mode"]
+	path = less-css-mode
+	url = git@github.com:purcell/less-css-mode
