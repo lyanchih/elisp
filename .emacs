@@ -43,6 +43,8 @@
 (add-to-list 'load-path "~/elisp/wsd-mode")
 (add-to-list 'load-path "~/elisp/jsx-mode.el/src")
 (add-to-list 'load-path "~/elisp/less-css-mode")
+(add-to-list 'load-path "~/elisp/dockerfile-mode")
+(add-to-list 'load-path "~/elisp/puppet-syntax-emacs")
 
 ;; Emacs Lisp Package Require
 ;;************************************************************
@@ -117,6 +119,8 @@
 (require 'wsd-mode)
 (require 'jsx-mode)
 (require 'less-css-mode)
+(require 'dockerfile-mode)
+(require 'puppet-mode)
 
 ;; Normal Development Enviroment Setting
 ;;************************************************************
@@ -184,7 +188,9 @@
 (setq auto-mode-alist (cons '("\\.feature$" . feature-mode) auto-mode-alist))
 (add-to-list 'auto-mode-alist '("\\.styl$" . sws-mode))
 (add-to-list 'auto-mode-alist '("\\.jade$" . jade-mode))
-
+(add-to-list 'auto-mode-alist '("\\.jsx\\'" . jsx-mode))
+(add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode))
+(add-to-list 'auto-mode-alist '("\\.pp$" . puppet-mode))
 
 ;; Frame relative setting
 ;;************************************************************
@@ -506,7 +512,6 @@ by using nxml's indentation rules."
   (setq tab-stop-list '(4 8 12 16 20 24 28 32 36 40 44 48 52 56 60)))
 
 ;; ***** jsx *****
-(add-to-list 'auto-mode-alist '("\\.jsx\\'" . jsx-mode))
 (autoload 'jsx-mode "jsx-mode" "JSX mode" t)
 (custom-set-variables
  '(jsx-indent-level 4)
