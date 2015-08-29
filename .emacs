@@ -45,6 +45,7 @@
 (add-to-list 'load-path "~/elisp/less-css-mode")
 (add-to-list 'load-path "~/elisp/dockerfile-mode")
 (add-to-list 'load-path "~/elisp/puppet-syntax-emacs")
+(add-to-list 'load-path "~/elisp/emacs-jedi")
 
 ;; Emacs Lisp Package Require
 ;;************************************************************
@@ -410,7 +411,7 @@
         (domain
          (read-string "Domain:" nil 'minibuffer-history "" nil))
         (port
-         (read-string "Port(22):" nil nil "22" nil))
+         (read-string "Port:" nil nil "" nil))
         (is-sudo
          (read-string "Sudo(y or n)?:" nil nil "n" nil))
         (ssh-result "/ssh"))
@@ -419,7 +420,8 @@
         (message "You should enter host name or domain")
       (if (or (eq host-name "") (eq domain ""))
           (set 'ssh-result (concat "/ssh:" (if (eq host-name "") domain host-name))))
-      (set 'ssh-result (concat ssh-result "#" port))
+      (if (not (eq port ""))
+          (set 'ssh-result (concat ssh-result "#" port)))
       (if (eq is-sudo "y") (set 'ssh-result (concat ssh-result "|sudo:")))
       (set 'ssh-result (concat ssh-result ":~/"))
       (dired ssh-result)
@@ -533,3 +535,8 @@ by using nxml's indentation rules."
       ((word-idiom
         (read-string "Word / Idiom : " nil 'minibuffer-history "word" nil)))
     (browse-url (format (google-url) (concat word-idiom " definition")))))
+
+;; ***** python *****
+(defun pyoff()
+  (interactive)
+  (set-variable 'python-indent-offset 4))

@@ -112,3 +112,6 @@
 [submodule "puppet-syntax-emacs"]
 	path = puppet-syntax-emacs
 	url = https://github.com/puppetlabs/puppet-syntax-emacs
+[submodule "emacs-jedi"]
+	path = emacs-jedi
+	url = git@github.com:tkf/emacs-jedi.git
