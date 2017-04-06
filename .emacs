@@ -173,14 +173,17 @@
 
 ;; Char Font Color and Size Setting
 ;;************************************************************
-(set-cursor-color "OliveDrab") ;; 107 142 35
-(set-mouse-color "goldenrod")
-(set-face-background 'region "DeepSkyBlue") ;; 0 191 255
-(set-foreground-color "OliveDrab")
-(set-background-color "black")
-(set-frame-font "-apple-DejaVu_Sans_Mono-medium-r-normal--20-*-*-*-m-0-iso10646-1")
+(defun normalMode()
+  (interactive)
+  (set-cursor-color "OliveDrab") ;; 107 142 35
+  (set-mouse-color "goldenrod")
+  (set-face-background 'region "DeepSkyBlue") ;; 0 191 255
+  (set-foreground-color "OliveDrab")
+  (set-background-color "black")
+  (set-frame-font "-apple-DejaVu_Sans_Mono-medium-r-normal--20-*-*-*-m-0-iso10646-1")
 ;(set-frame-font "-apple-courier-medium-r-normal--22-240-72-72-m-240-iso10646-1")
-(set-language-environment 'UTF-8)
+  (set-language-environment 'UTF-8))
+(normalMode)
 
 ;; Auto Mode Alist
 ;;************************************************************
@@ -540,3 +543,13 @@ by using nxml's indentation rules."
 (defun pyoff()
   (interactive)
   (set-variable 'python-indent-offset 4))
+
+;; ***** talk *****
+(defun talkMode()
+  (interactive)
+  (set-cursor-color "OliveDrab") ;; 107 142 35
+  (set-mouse-color "goldenrod")
+  (set-face-background 'region "DeepSkyBlue") ;; 0 191 255
+  (set-foreground-color "black")
+  (set-background-color "white")
+  (set-frame-font "-apple-DejaVu_Sans_Mono-medium-r-normal--30-*-*-*-m-0-iso10646-1"))
