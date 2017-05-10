@@ -115,3 +115,6 @@
 [submodule "emacs-jedi"]
 	path = emacs-jedi
 	url = git@github.com:tkf/emacs-jedi.git
+[submodule "markdown-mode"]
+	path = markdown-mode
+	url = git@github.com:defunkt/markdown-mode.git

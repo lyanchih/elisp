@@ -46,6 +46,7 @@
 (add-to-list 'load-path "~/elisp/dockerfile-mode")
 (add-to-list 'load-path "~/elisp/puppet-syntax-emacs")
 (add-to-list 'load-path "~/elisp/emacs-jedi")
+(add-to-list 'load-path "~/elisp/markdown-mode")
 
 ;; Emacs Lisp Package Require
 ;;************************************************************
@@ -122,6 +123,11 @@
 (require 'less-css-mode)
 (require 'dockerfile-mode)
 (require 'puppet-mode)
+(require 'markdown-mode)
+(require 'top-mode)
+
+;; ***** path env *****
+(setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH")))
 
 ;; Normal Development Enviroment Setting
 ;;************************************************************
