@@ -125,9 +125,10 @@
 (require 'puppet-mode)
 (require 'markdown-mode)
 (require 'top-mode)
+(require 'go-guru)
 
 ;; ***** path env *****
-(setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH")))
+(setenv "PATH" (concat (concat (getenv "HOME") "/go/bin:") "/usr/local/bin:" (getenv "PATH")))
 
 ;; Normal Development Enviroment Setting
 ;;************************************************************
