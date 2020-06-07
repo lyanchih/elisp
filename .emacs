@@ -49,6 +49,7 @@
 (add-to-list 'load-path "~/elisp/markdown-mode")
 (add-to-list 'load-path "~/elisp/rust-mode")
 (add-to-list 'load-path "~/elisp/dart-emacs-plugin-unsupported")
+(add-to-list 'load-path "~/elisp/typescript.el")
 
 ;; Emacs Lisp Package Require
 ;;************************************************************
@@ -569,3 +570,6 @@ by using nxml's indentation rules."
 
 ;; ***** dart *****
 (require 'dart-mode)
+
+;; ***** typescript *****
+(require 'typescript-mode)

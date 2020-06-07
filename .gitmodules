@@ -124,3 +124,6 @@
 [submodule "dart-emacs-plugin-unsupported"]
 	path = dart-emacs-plugin-unsupported
 	url = https://github.com/google/dart-emacs-plugin-unsupported
+[submodule "typescript.el"]
+	path = typescript.el
+	url = https://github.com/emacs-typescript/typescript.el
