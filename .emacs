@@ -47,6 +47,8 @@
 (add-to-list 'load-path "~/elisp/puppet-syntax-emacs")
 (add-to-list 'load-path "~/elisp/emacs-jedi")
 (add-to-list 'load-path "~/elisp/markdown-mode")
+(add-to-list 'load-path "~/elisp/rust-mode")
+(add-to-list 'load-path "~/elisp/dart-emacs-plugin-unsupported")
 
 ;; Emacs Lisp Package Require
 ;;************************************************************
@@ -187,7 +189,7 @@
   (set-face-background 'region "DeepSkyBlue") ;; 0 191 255
   (set-foreground-color "OliveDrab")
   (set-background-color "black")
-  (set-frame-font "-apple-DejaVu_Sans_Mono-medium-r-normal--20-*-*-*-m-0-iso10646-1")
+  (set-frame-font "-DAMA-Ubuntu Mono-normal-normal-normal-*-22-*-*-*-m-0-fontset-startup")
   ;(set-frame-font "-apple-AppleGothic-medium-r-normal--24-*-*-*-m-0-iso10646-1")
 ;(set-frame-font "-apple-courier-medium-r-normal--22-240-72-72-m-240-iso10646-1")
   (set-language-environment 'UTF-8))
@@ -561,3 +563,9 @@ by using nxml's indentation rules."
   (set-foreground-color "black")
   (set-background-color "white")
   (set-frame-font "-apple-DejaVu_Sans_Mono-medium-r-normal--30-*-*-*-m-0-iso10646-1"))
+
+;; ***** rust *****
+(require 'rust-mode)
+
+;; ***** dart *****
+(require 'dart-mode)

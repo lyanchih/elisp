@@ -118,3 +118,9 @@
 [submodule "markdown-mode"]
 	path = markdown-mode
 	url = git@github.com:defunkt/markdown-mode.git
+[submodule "rust-mode"]
+	path = rust-mode
+	url = https://github.com/rust-lang/rust-mode
+[submodule "dart-emacs-plugin-unsupported"]
+	path = dart-emacs-plugin-unsupported
+	url = https://github.com/google/dart-emacs-plugin-unsupported
