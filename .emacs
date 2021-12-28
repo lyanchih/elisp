@@ -50,6 +50,7 @@
 (add-to-list 'load-path "~/elisp/rust-mode")
 (add-to-list 'load-path "~/elisp/dart-emacs-plugin-unsupported")
 (add-to-list 'load-path "~/elisp/typescript.el")
+(add-to-list 'load-path "~/elisp/emacs-solidity")
 
 ;; Emacs Lisp Package Require
 ;;************************************************************
@@ -290,7 +291,13 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(auto-indent-next-pair-timer-geo-mean (quote ((default 0.0005 0)))))
+ '(auto-indent-next-pair-timer-geo-mean (quote ((default 0.0005 0))))
+ '(jsx-cmd-options nil)
+ '(jsx-indent-level 4)
+ '(jsx-syntax-check-mode "compile")
+ '(jsx-use-flymake nil)
+ '(tramp-copy-size-limit 10000000)
+ '(tramp-inline-compress-start-size 1000000))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -529,11 +536,7 @@ by using nxml's indentation rules."
 
 ;; ***** jsx *****
 (autoload 'jsx-mode "jsx-mode" "JSX mode" t)
-(custom-set-variables
- '(jsx-indent-level 4)
- '(jsx-cmd-options nil)
- '(jsx-use-flymake nil)
- '(jsx-syntax-check-mode "compile"))
+
 
 (defun jsx-mode-init ()
   (define-key jsx-mode-map (kbd "C-c d") 'jsx-display-popup-err-for-current-line)
@@ -573,3 +576,6 @@ by using nxml's indentation rules."
 
 ;; ***** typescript *****
 (require 'typescript-mode)
+
+;; ***** solic *****
+(require 'solidity-mode)

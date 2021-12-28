@@ -127,3 +127,6 @@
 [submodule "typescript.el"]
 	path = typescript.el
 	url = https://github.com/emacs-typescript/typescript.el
+[submodule "emacs-solidity"]
+	path = emacs-solidity
+	url = https://github.com/ethereum/emacs-solidity
